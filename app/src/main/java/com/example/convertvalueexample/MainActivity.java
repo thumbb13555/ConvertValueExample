@@ -31,15 +31,16 @@ public class MainActivity extends AppCompatActivity {
             if (edInput.getText().toString().length()>0){
                 long input = (short)Integer.parseInt(edInput.getText().toString(),16);
                 edDecimal.setText(String.valueOf(input));
-
-                if (Long.toBinaryString(input).length()<8){
-                    edBinary.setText(String.format("%08d",Integer.parseInt(Long.toBinaryString(input))));
-                }else if(input<0){
+                if(input<0){
                     edBinary.setText("-"+(Long.toBinaryString(~input+1)));
                     edOctal.setText("-"+Long.toOctalString(~input+1));
                 }else{
                     edBinary.setText(Long.toBinaryString(input));
                     edOctal.setText(Long.toOctalString(input));
+                }
+
+                if (Long.toBinaryString(input).length()<8){
+                    edBinary.setText(String.format("%08d",Integer.parseInt(Long.toBinaryString(input))));
                 }
 
             }
