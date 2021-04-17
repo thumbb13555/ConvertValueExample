@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void convert(){
             if (edInput.getText().toString().length()>0){
-                long input = (short)Integer.parseInt(edInput.getText().toString(),16);
+                int input = (short)Integer.parseInt(edInput.getText().toString(),16);
                 edDecimal.setText(String.valueOf(input));
                 if(input<0){
                     edBinary.setText("-"+(Long.toBinaryString(~input+1)));
